@@ -1,13 +1,5 @@
 version: '3.8'
 
-env:
-  DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-  DATABASE_USER: ${{ secrets.DATABASE_USER }}
-  DATABASE_PASS: ${{ secrets.DATABASE_PASS }}
-  DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-  DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
 services:
   app:
     build:
@@ -26,9 +18,9 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: ${{ secrets.DATABASE_USER }}
-      POSTGRES_DB: ${{ secrets.DATABASE_NAME }}
-      POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASS }}
+      POSTGRES_USER: ${DATABASE_NAME}
+      POSTGRES_DB: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
 
 volumes:
   postgres-data:
