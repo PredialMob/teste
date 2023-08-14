@@ -6,7 +6,7 @@
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"postCreateCommand": "pip install -r requirements.txt && python manage.py migrate",
 	"postAttachCommand": {
-		"server": "python pillarpointstewards/manage.py runserver"
+		"server": "python manage.py runserver"
 	},
 	"portsAttributes": {
 		"8000": {
