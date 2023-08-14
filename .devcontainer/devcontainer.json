@@ -16,5 +16,12 @@
 	},
 	"forwardPorts": [
 		8000
-	]
+	],
+	"secrets": {
+		"NAME_OF_SECRET_1": {
+			"description": "This is the description of the secret.",
+			"documentationUrl": "https://example.com/link/to/info"
+		},
+		"NAME_OF_SECRET_2": {}
+	}
 }
