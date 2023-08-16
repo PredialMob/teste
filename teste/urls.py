@@ -15,8 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.shortcuts import render
 from django.urls import path
+
+from campos.models import MyModelForm, MyModel
+
+def teste(request):
+    form = MyModelForm(instance=MyModel.objects.all()[0])
+    return render(request, "name.html", {"form": form})
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", teste),
 ]
